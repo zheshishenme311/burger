@@ -1,0 +1,39 @@
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to Eat Da burger</h1>
+    <p class="lead">You can add a new burger or eat existing burgers</p>
+    <hr class="my-4">
+</div>
+
+<input type="text" id="burger">
+<button id="addBurger">Add Burger</button>
+
+<div class="row">
+
+    <div id="toeat" class='col-6 justify-content-center'>
+        <h3>Burgers to Devour</h3>
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <li>
+                <p>{{burger_name}}</p> <button id={{id}} class='devour'>Devour</button>
+            </li>
+            {{/unless}}
+
+            {{/each}}
+        </ul>
+
+
+    </div>
+    <div id="eaten" class='col-6 justify-content-center'>
+        <h3>Burgers Devoured</h3>
+        <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+            <li>
+                <p>{{burger_name}}</p>
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
